@@ -1,1 +1,98 @@
-һ��ٽ�Ѿ�ӿ�����
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta content="telephone=no,email=no" name="format-detection">
+  <link rel="shortcut icon" href="imgs/icon.png" type="image/x-icon"/>
+  <title>玖贰-520活动</title>
+  <style>
+  @media all and (max-width: 420px){
+  html{font-size: 85.47px;}
+}
+/*iPhone5*/
+@media (min-device-width : 320px) and (max-device-width : 568px){
+  html{font-size: 85.47px;}
+}
+/*iPhone6*/
+@media (min-device-width : 375px) and (max-device-width : 667px){
+  html{font-size: 100px;}
+}
+/* iphone6 plus */
+@media (min-device-width : 414px) and (max-device-width : 736px){
+  html{font-size: 110.4px;}
+}
+/*���� iphone6 plus */
+@media (min-device-width : 736px){
+  html{font-size: 140px;}
+}
+  *{margin:0;padding:0}
+  html,body{width:100%;height:100%;}
+  .text-container{display: table;
+    width: 100%;
+    height: 100%;}
+  .va-middle{display: table-cell;
+    vertical-align: middle;
+  }
+  .t-middle{
+    text-align: center;
+  }
+  .hidden{display:none;}
+  .f20{font-size:.2rem;}
+  .f24{font-size:24rem;}
+  .f30{font-size:3rem;}
+  img{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    opacity: 0;
+  }
+  .end{
+    top:50%;
+    opacity: 1;
+    transition:all 1s ease;
+  }
+  </style>
+</head>
+<body>
+  <div class="text-container">
+    <div class="va-middle t-middle">
+      <p class="f20 a hidden">还记得,上一次一起吃饭是什么时候吗?</p>
+      <p class="f20 b hidden">停下脚步,别忘了身边的TA和TA们.</p>
+      <p class="f20 c hidden">520 = 陪伴</p>
+      <img class="d" src="imgs/qr.jpg"  style="height:200px;" alt="">
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="index.js"></script>
+<script tpye="text/javascript">
+$(function(){
+  setTimeout(function(){
+    show($(".a"),function(){
+      show($(".b"),function(){
+        show($(".c"),function(){
+          $(".d").addClass('end');
+        })
+      })
+    });                   
+  },1000)
+});
+
+function show(obj,fn){
+  setTimeout(function(){
+    obj.fadeIn(1000, function() {
+    setTimeout(function(){
+      obj.fadeOut(1000, function() {
+        fn();
+      });
+    },200)
+  });
+  },200)
+}
+</script>
+</html>
